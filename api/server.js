@@ -7,6 +7,8 @@ const terminate = require('./src/terminate');
 
 const newVar = 'This is a new variable';
 
+const anotherVar = 'This is another variable';
+
 const normalizePort = (val) => {
   var port = parseInt(val, 10);
 
