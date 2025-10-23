@@ -1,0 +1,134 @@
+.loading-container {
+  position: fixed;
+  z-index: 100000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #004990;
+  top: 0;
+  left: 0;
+  font-size: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+  80% {
+    transform: translateY(2);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  80% {
+    transform: translateX(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.loading {
+  font-size: 8rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--color-blue-light);
+}
+
+.loading span {
+  display: inline-block;
+  margin: 0 -0.05em;
+}
+
+.loading-tw span {
+  animation: loading01 1.4s infinite alternate;
+}
+
+/* Expanded from the @for loop */
+.loading-tw span:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.loading-tw span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.loading-tw span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.loading-tw span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.loading-tw span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+.loading-tw span:nth-child(6) {
+  animation-delay: 0.5s;
+}
+
+.loading-tw span:nth-child(7) {
+  animation-delay: 0.6s;
+}
+
+/* // .loading {
+//   font-size: 8rem;
+//   font-weight: 700;
+//   text-align: center;
+//   color: var(--color-blue-light);
+//   span {
+//     display: inline-block;
+//     margin: 0 -0.05em;
+//   }
+// }
+
+// .loading-tw {
+//   span {
+//     animation: loading01 1.4s infinite alternate;
+//     @for $i from 0 through 6 {
+//       &:nth-child(#{$i + 1}) {
+//         animation-delay: #{$i * 0.1}s;
+//       }
+//     }
+//   }
+// } */
+
+@keyframes loading01 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes clickEffect {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+@keyframes rotateAnimation {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-container .p-progressbar-label {
+  color: #fff !important;
+}

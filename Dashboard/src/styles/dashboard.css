@@ -1,0 +1,267 @@
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes scaleUp {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes drawCircle {
+  from {
+    stroke-dashoffset: 201;
+  }
+  to {
+    stroke-dashoffset: var(--progress-offset);
+  }
+}
+
+.header-animate {
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.stat-card-1 {
+  animation: scaleIn 0.5s ease-out 0.1s backwards;
+}
+
+.stat-card-2 {
+  animation: scaleIn 0.5s ease-out 0.2s backwards;
+}
+
+.stat-card-3 {
+  animation: scaleIn 0.5s ease-out 0.3s backwards;
+}
+
+.stat-card-4 {
+  animation: scaleIn 0.5s ease-out 0.4s backwards;
+}
+
+.card-animate-1 {
+  animation: fadeInUp 0.5s ease-out 0.5s backwards;
+}
+
+.card-animate-2 {
+  animation: fadeInUp 0.5s ease-out 0.6s backwards;
+}
+
+.card-animate-3 {
+  animation: fadeInUp 0.5s ease-out 0.7s backwards;
+}
+
+.card-animate-4 {
+  animation: fadeInUp 0.5s ease-out 0.8s backwards;
+}
+
+.status-card {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.status-card:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.status-card-glow-green:hover {
+  box-shadow: 0 20px 25px -5px rgba(34, 197, 94, 0.5),
+    0 10px 10px -5px rgba(34, 197, 94, 0.3);
+}
+
+.status-card-glow-red:hover {
+  box-shadow: 0 20px 25px -5px rgba(239, 68, 68, 0.5),
+    0 10px 10px -5px rgba(239, 68, 68, 0.3);
+}
+
+.status-card-glow-yellow:hover {
+  box-shadow: 0 20px 25px -5px rgba(234, 179, 8, 0.5),
+    0 10px 10px -5px rgba(234, 179, 8, 0.3);
+}
+
+.shimmer-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.shimmer-effect::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.2),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0s;
+}
+
+.shimmer-effect:hover::before {
+  animation: shimmer 0.6s ease-out;
+}
+
+.icon-spin {
+  transition: transform 0.6s ease-out;
+}
+
+.icon-spin:hover {
+  transform: rotate(360deg);
+}
+
+.icon-spin-continuous {
+  animation: spin 2s linear infinite;
+}
+
+.icon-pulse {
+  animation: scaleUp 0.5s ease-in-out infinite;
+}
+
+.status-row {
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.status-row:hover {
+  transform: scale(1.02);
+}
+
+.total-badge {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.total-badge:hover {
+  transform: scale(1.1);
+}
+
+.progress-circle {
+  stroke-dasharray: 201;
+  stroke-dashoffset: 201;
+  transition: stroke-dashoffset 1s ease-out 0.5s;
+}
+
+.number-scale {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.status-card:hover .number-scale {
+  transform: scale(1.1);
+}
+
+.progress-bar {
+  transition: width 0.8s ease-out;
+}
+
+.pulse-dot {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.date-component {
+  animation: fadeInDown 0.6s ease-out;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.date-component:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.5);
+}
+
+.time-fade {
+  animation: fadeIn 0.3s ease-in;
+}
+
+/* Calendar Popover Styles */
+.date-component:active {
+  transform: translateY(0);
+}
+
+/* Make calendar match dashboard theme */
+[data-slot='popover-content'] {
+  background: rgba(30, 41, 59, 0.95) !important;
+  border-color: rgba(71, 85, 105, 0.5) !important;
+  backdrop-filter: blur(20px);
+}
+
+[data-slot='popover-content'] button {
+  color: rgb(203, 213, 225);
+}
+
+[data-slot='popover-content'] button:hover {
+  background: rgba(59, 130, 246, 0.2);
+  color: rgb(147, 197, 253);
+}
+
+[data-slot='popover-content'] button[aria-selected='true'] {
+  background: rgba(59, 130, 246, 0.5) !important;
+  color: white !important;
+}

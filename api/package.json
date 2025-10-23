@@ -1,0 +1,32 @@
+{
+  "name": "nexgen40_auto_process_order_api",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js --env=dev",
+    "start:prod": "nodemon server.js --env=prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TwMetals/NexGen40_Auto_Process_Order_API.git"
+  },
+  "author": "FT",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TwMetals/NexGen40_Auto_Process_Order_API/issues"
+  },
+  "homepage": "https://github.com/TwMetals/NexGen40_Auto_Process_Order_API#readme",
+  "description": "",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.1",
+    "mssql": "^11.0.1",
+    "nodemon": "^3.1.7",
+    "odbc": "^2.4.9",
+    "uuid": "^11.0.3",
+    "yargs": "^17.7.2"
+  }
+}
